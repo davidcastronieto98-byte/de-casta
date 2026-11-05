@@ -157,7 +157,7 @@ footer .c{margin-top:60px;padding-top:26px;border-top:1px solid var(--linea);col
 <main>
   <section class="hero">
     <h1 class="sr">DE CASTA</h1>
-    <img src="img/logo-de-casta.png" alt="DE CASTA, astas de ciervo">
+    <img src="img/logo-de-casta.png" onerror="this.onerror=null;this.src=this.src.replace('/img/','/')" alt="DE CASTA, astas de ciervo">
     <span class="eb">Ropa de caza y campo · Hecha en España</span>
     <a class="btn" href="#coleccion">Ver la colección</a>
   </section>
@@ -221,7 +221,7 @@ footer .c{margin-top:60px;padding-top:26px;border-top:1px solid var(--linea);col
         <article class="card" data-id="P01" data-nombre="Polo HERITAGE SS25" data-precio="35" data-color="Beige">
           <div class="sw">
             <span class="num">01</span><span class="tag">Nuevo</span>
-            <img class="foto" src="img/polo-delantero.png" alt="Polo HERITAGE SS25, vista delantera">
+            <img class="foto" src="img/polo-delantero.png" onerror="this.onerror=null;this.src=this.src.replace('/img/','/')" alt="Polo HERITAGE SS25, vista delantera">
             <button class="gb prev" aria-label="Vista anterior">‹</button>
             <button class="gb next" aria-label="Vista siguiente">›</button>
             <span class="gd">Delantero</span>
@@ -244,7 +244,7 @@ footer .c{margin-top:60px;padding-top:26px;border-top:1px solid var(--linea);col
         <article class="card" data-id="C01" data-nombre="Camisa de Campo" data-precio="25.90" data-color="Blanco">
           <div class="sw">
             <span class="num">02</span>
-            <img class="foto" src="img/camisa-blanca.png" alt="Camisa de Campo blanca, vista delantera">
+            <img class="foto" src="img/camisa-blanca.png" onerror="this.onerror=null;this.src=this.src.replace('/img/','/')" alt="Camisa de Campo blanca, vista delantera">
           </div>
           <div class="inf">
             <span class="rf">Ref. C01</span>
@@ -264,7 +264,7 @@ footer .c{margin-top:60px;padding-top:26px;border-top:1px solid var(--linea);col
         <article class="card" data-id="C01" data-nombre="Camisa de Campo" data-precio="25.90" data-color="Azul marino">
           <div class="sw">
             <span class="num">03</span>
-            <img class="foto" src="img/camisa-azul-marino.png" alt="Camisa de Campo azul marino, vista delantera">
+            <img class="foto" src="img/camisa-azul-marino.png" onerror="this.onerror=null;this.src=this.src.replace('/img/','/')" alt="Camisa de Campo azul marino, vista delantera">
           </div>
           <div class="inf">
             <span class="rf">Ref. C01</span>
@@ -358,6 +358,7 @@ footer .c{margin-top:60px;padding-top:26px;border-top:1px solid var(--linea);col
               {src:'img/polo-trasero.png',n:'Trasero',alt:'Polo HERITAGE SS25, vista trasera'}];
   function poloVista(){
     var v=vistas[vista],img=$('.foto',polo);
+    img.onerror=function(){img.onerror=null;img.src=v.src.replace('img/','')};
     img.src=v.src;img.alt=v.alt;
     $('.gd',polo).textContent=v.n;
   }
